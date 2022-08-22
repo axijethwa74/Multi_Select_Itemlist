@@ -1,10 +1,13 @@
-import 'package:flutter/material.dart';
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:itemlist/routes/app_pages.dart';
 
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(
     GetMaterialApp(
       title: "Application",
@@ -13,4 +16,9 @@ void main() {
       debugShowCheckedModeBanner: false,
     ),
   );
-}
+  }
+ 
+
+
+
+
